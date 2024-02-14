@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="" id="theme-style">
+</head>
+<body>
+   <main id="main-container">
+    <header id="calculator-header">
+        <h3 class="logo">calc</h3>
+
+        <div class="change-theme">
+            <small class="title">THEME</small>
+
+            <div class="toggle-theme-container">
+                <ul class="themes-list">
+                    <li class="theme">1</li>
+                    <li class="theme">2</li>
+                    <li class="theme">3</li>
+                </ul>
+                <div class="toggle-theme-bar">
+                    <div class="theme-position" data-mode="blue"><span class="toggler"></span></div>
+                    <div class="theme-position" data-mode="light"></div>
+                    <div class="theme-position" data-mode="purple"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="calculation-area">
+        <div class="operation">
+            <span class="value1"></span>
+            <span class="operator"></span>
+            <span class="value2"></span>
+            <span class="equal-sign"></span>
+        </div>
+        <p class="screen"></p>
+    </section>
+
+    <section id="digits">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="delete">DEL</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="plus">+</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="minus">-</button>
+        <button class="point">.</button>
+        <button>0</button>
+        <button class="divide">/</button>
+        <button class="multiply">x</button>
+        <button class="reset">Reset</button>
+        <button class="equals">=</button>
+    </section>
+   </main>
+    <script src="dom.js"></script>
+    <script src="change-theme.js"></script>
+    <script src="calculator-functionality.js"></script>
+</body>
+</html>

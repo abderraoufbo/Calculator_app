@@ -1,0 +1,27 @@
+:root {
+  /* Theme 2 */
+
+  --main-bg: hsl(0, 0%, 90%); /* main background */
+  --toggle-keypad-bg: hsl(
+    0,
+    5%,
+    81%
+  ); /* toggle background, keypad background */
+  --screen-bg: hsl(0, 0%, 93%); /* screen background */
+
+  /* Keys */
+
+  --key-delete-equals-bg: hsl(185, 42%, 37%); /* key background */
+  --key-delete-equals-shadow: hsl(185, 58%, 25%); /* key shadow */
+
+  --key-toggle-reset-bg: hsl(25, 98%, 40%); /* key background, toggle */
+  --key-toggle-reset-shadow: hsl(25, 99%, 27%); /* key shadow */
+
+  --key-bg: hsl(45, 7%, 89%); /* key background */
+  --key-shadow: hsl(35, 11%, 61%); /* key shadow */
+
+  /* Text */
+
+  --text-primary: hsl(60, 10%, 19%);
+  --white: hsl(0, 0%, 100%);
+}
