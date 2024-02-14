@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+:root {
+  /* Theme 1 */
+
+  --main-bg: hsl(222, 26%, 31%); /* main background */
+  --toggle-keypad-bg: hsl(
+    223,
+    31%,
+    20%
+  ); /* toggle background, keypad background */
+  --screen-bg: hsl(224, 36%, 15%); /* screen background */
+
+  /* Keys */
+
+  --key-delete-equals-bg: hsl(225, 21%, 49%); /* key background */
+  --key-delete-equals-shadow: hsl(224, 28%, 35%); /* key shadow */
+
+  --key-toggle-reset-bg: hsl(6, 63%, 50%); /* key background, toggle */
+  --key-toggle-reset-shadow: hsl(6, 70%, 34%); /* key shadow */
+
+  --key-bg: hsl(30, 25%, 89%); /* key background */
+  --key-shadow: hsl(28, 16%, 65%); /* key shadow */
+
+  /* Text */
+
+  --text-primary: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition-duration: 1s;
+}
+
+body {
+  background-color: var(--main-bg);
+  height: 100vh;
+  font-family: "League Spartan", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-container {
+  width: 31.25rem;
+  height: 40rem;
+}
+
+#calculator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.logo {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.change-theme {
+  display: flex;
+  align-items: flex-end;
+}
+
+.title {
+  display: block;
+  color: var(--white);
+  margin-right: 1.5625rem;
+  margin-bottom: 0.25rem;
+}
+
+.toggle-theme-container {
+  width: 4.6875rem;
+}
+
+.themes-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 0.1563rem;
+}
+
+.theme {
+  color: var(--white);
+}
+
+.toggle-theme-bar {
+  background-color: var(--toggle-keypad-bg);
+  height: 1.4063rem;
+  border-radius: 3.125rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.theme-position {
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: var(--toggle-keypad-bg);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.theme-position:nth-of-type(2),
+.theme-position:last-child {
+  margin-right: 0.0625rem;
+}
+
+.toggler {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--key-toggle-reset-bg);
+  border-radius: 50%;
+}
+
+#calculation-area {
+  width: 100%;
+  height: 5.25rem;
+  background-color: var(--screen-bg);
+  border-radius: 0.625rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  transition-duration: 0s;
+}
+
+.operation {
+  position: absolute;
+  top: 8.5%;
+  right: 5%;
+  color: darkgray;
+
+  display: none;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 0.625rem;
+  outline: none;
+  border: none;
+  font-size: 3.5rem;
+  color: var(--white);
+  font-weight: 700;
+  text-align: right;
+  padding: 1.875rem;
+  caret-color: transparent;
+}
+
+#digits {
+  height: 72%;
+  background-color: var(--toggle-keypad-bg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 3.75rem);
+  gap: 1.5625rem;
+  padding: 1.5625rem;
+
+  border-radius: 0.625rem;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.625rem;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: var(--key-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+
+  box-shadow: 0 0.1875rem 0.1563rem 0 var(--key-shadow);
+}
+
+button:hover {
+  background-color: var(--white);
+}
+
+button:active {
+  transform: scale(0.95);
+  transition-duration: 0s;
+}
+
+.active {
+  border: 5px solid darkgray;
+  transition-duration: 0s;
+}
+
+.delete {
+  background-color: var(--key-delete-equals-bg);
+  box-shadow: 0 0.1875rem 0.1563rem 0 var(--key-delete-equals-shadow);
+  color: var(--white);
+}
+
+.delete:hover {
+  background-color: var(--key-delete-equals-bg);
+  opacity: 0.5;
+}
+
+.reset {
+  grid-column: 1/3;
+  width: 100%;
+  background-color: var(--key-toggle-reset-bg);
+  color: var(--white);
+  text-transform: uppercase;
+
+  box-shadow: 0 0.1875rem 0.1563rem 0 var(--key-toggle-reset-shadow);
+}
+
+.reset:hover {
+  background-color: var(--key-toggle-reset-bg);
+  opacity: 0.5;
+}
+
+.equals {
+  grid-column: 3/5;
+  width: 100%;
+  background-color: var(--key-delete-equals-bg);
+  color: var(--white);
+
+  box-shadow: 0 0.1875rem 0.1563rem 0 var(--key-delete-equals-shadow);
+}
+
+.equals:hover {
+  background-color: var(--key-delete-equals-bg);
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 37.5rem) {
+  #main-container {
+    width: 90%;
+  }
+
+  #digits {
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.9375rem;
+  }
+}
